@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Contacts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .table-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="">
+    <header class="text-center">
+        <h1>All Contacts</h1>
+    </header>
+    <section class="table-container">
+
+        <table class="table">
+            <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Subject</th>
+                <th>Message</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="contact : ${contacts}">
+                <td th:text="${contact.name}"></td>
+                <td th:text="${contact.email}"></td>
+                <td th:text="${contact.phoneNumber}"></td>
+                <td th:text="${contact.subject}"></td>
+                <td th:text="${contact.message}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+</body>
+</html>
